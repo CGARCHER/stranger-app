@@ -1,0 +1,129 @@
+/* ===========================
+   ESTILO GENERAL 
+   =========================== */
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #0b0b0c;           /* negro profundo */
+    color: #e3e3e3;               /* gris claro */
+    font-family: 'Arial', sans-serif;
+    text-shadow: 0 0 4px rgba(255, 0, 0, 0.4); /* brillo rojo suave */
+}
+
+/* ------------------------------
+   FUENTE TIPO STRANGER THINGS
+   (Imitación usando serif fuertes)
+   ------------------------------ */
+
+h1 {
+    text-align: center;
+    font-size: 48px;
+    margin: 20px 0;
+    letter-spacing: 4px;
+    color: #ff1b1b;
+    font-family: "Georgia", serif;
+    text-shadow:
+        0 0 6px #ff0000,
+        0 0 12px #990000,
+        0 0 20px #550000;
+}
+
+/* ===========================
+   GRID DE TARJETAS
+   =========================== */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 30px;
+    width: 90%;
+    margin: auto;
+}
+
+/* ===========================
+   TARJETAS
+   =========================== */
+
+.card {
+    background: rgba(20, 20, 20, 0.85);
+    padding: 15px;
+    border-radius: 12px;
+    border: 2px solid #ff000044;
+    box-shadow:
+        0 0 10px #ff000044,
+        0 0 20px #330000aa;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow:
+        0 0 20px #ff000088,
+        0 0 30px #330000cc;
+}
+
+/* Imagen */
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid #550000;
+}
+
+/* Nombre del personaje */
+.card .name {
+    font-size: 24px;
+    margin-top: 10px;
+    color: #ff1b1b;
+    text-align: center;
+    font-family: "Georgia", serif;
+    text-shadow:
+        0 0 5px #ff0000,
+        0 0 15px #550000;
+}
+
+/* Texto */
+.card p {
+    margin: 8px 0;
+}
+
+/* Enlace detalle */
+.card a {
+    color: #ff3b3b;
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: 0 0 4px #ff0000;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+/* TARJETA SIN FOTO */
+.card.no-photo {
+    opacity: 0.6;
+    filter: grayscale(80%);
+    border-color: #660000;
+    box-shadow: 0 0 10px #330000;
+}
+
+.card.no-photo .name {
+    color: #aa4444;
+    text-shadow: 0 0 4px #550000;
+}
+
+.card.no-photo img {
+    border-color: #330000;
+    filter: brightness(0.6) contrast(0.8);
+}
+
+.card img {
+    width: 100%;
+    height: 350px;     /* <-- aumentado de 250px a 350px */
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid #550000;
+}
+
