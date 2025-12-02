@@ -15,23 +15,29 @@ class CharacterApi
     }
 
     /**
-     * Devuelve el listado completo de personajes.
-     *
-     * @return array lista de personajes o array vacío si hay error.
-     */
-    public function getAllCharacters(): array
-    {
-        $url = $this->baseUrl . '/list';
-        $json = @file_get_contents($url);
+ * Devuelve el listado completo de personajes.
+ *
+ * @return array|null
+ *   - array con personajes si todo va bien
+ *   - array vacío si la API responde pero no hay datos
+ *   - null si hay un error real (no conecta, JSON inválido, etc.)
+ */
+public function getAllCharacters(): ?array
+{
+    $url = $this->baseUrl . '/list';
+    $json = @file_get_contents($url);
 
-        if ($json === false) {
-            return [];
-        }
-
-        $data = json_decode($json, true);
-
-        return is_array($data) ? $data : [];
+    // Si no se puede conectar a la API → error real
+    if ($json === false) {
+        echo "Probable error de conexión con la API";
     }
+
+    $data = json_decode($json, true);
+
+    // Si llega aquí significa que la API respondió bien (aunque devuelva [])
+    return $data;
+}
+
 
     /**
      * Devuelve la información de un personaje por ID.
