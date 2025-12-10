@@ -1,5 +1,5 @@
 -- Crear la base de datos stranger
-CREATE DATABASE stranger;
+--- CREATE DATABASE stranger;
 
 -- Crear la tabla de personajes
 CREATE TABLE IF NOT EXISTS characters (
